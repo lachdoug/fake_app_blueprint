@@ -16,10 +16,12 @@
         "patch": 1
       }
     },
-    "timestamp": "2019-03-18T22:03:36+11:00"
+    "timestamp": "2019-03-19T20:24:27+11:00"
   },
   "software": {
     "base": {
+      "name": "Fakeapp",
+      "framework": "sinatra",
       "deployment_type": "web",
       "http_protocol": "https_and_http"
     }
