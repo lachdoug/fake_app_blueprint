@@ -1,29 +1,134 @@
 {
+  "software": {
+    "base": {
+      "name": "Fakeapp",
+      "framework": "sinatra",
+      "deployment_type": "web",
+      "http_protocol": "https_and_http",
+      "framework_port_override": 2,
+      "memory": {
+        "required": 126
+      }
+    },
+    "service_configurations": [
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "auth",
+        "variables": {
+          "prefix": "hosta",
+          "owner": "_Engines_Builder(cont_user_id)"
+        }
+      },
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "database/sql/mysql",
+        "variables": {
+          "database_name": "_Engines_Builder(engine_name)",
+          "database_host": "_Engines_System(mysql_host)",
+          "db_username": "_Engines_Builder(engine_name)",
+          "db_password": "_Engines_System(random(10))",
+          "collation": "utf8_general_ci",
+          "full_access": "false"
+        }
+      },
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "database/sql/mysql",
+        "variables": {
+          "database_name": "_Engines_Builder(engine_name)x",
+          "database_host": "_Engines_System(mysql_host)",
+          "db_username": "_Engines_Builder(engine_name)",
+          "db_password": "_Engines_System(random(10))",
+          "collation": "utf8_general_ci",
+          "full_access": "false"
+        }
+      }
+    ],
+    "environment_variables": [
+      {
+        "name": "sss"
+      }
+    ],
+    "template_files": [
+      {
+        "path": "w"
+      }
+    ],
+    "actionators": [
+      {
+        "name": "aaa",
+        "background": true,
+        "variables": [
+          {
+            "name": "ss",
+            "input": {
+              "type": "string",
+              "collection": {
+                "items": {
+                  "as": "A"
+                }
+              }
+            }
+          },
+          {
+            "name": "qqqqqqqqqqq",
+            "value": "z",
+            "input": {
+              "type": "select",
+              "collection": {
+                "items": {
+                  "a": "A",
+                  "b": "B"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "bbb",
+        "variables": [
+          {
+            "name": "ee"
+          },
+          {
+            "name": "ff"
+          }
+        ]
+      }
+    ],
+    "schedules": [
+      {
+        "label": "q",
+        "instruction": "action",
+        "actionator": {
+          "name": "aaa",
+          "params": {
+            "qqqqqqqqqqq": "z",
+            "ee": "s",
+            "ff": "sss"
+          }
+        }
+      },
+      {
+        "label": "z",
+        "instruction": "action",
+        "actionator": {
+          "name": "bbb",
+          "params": {
+            "ee": "z",
+            "ff": "z"
+          }
+        }
+      }
+    ]
+  },
   "schema": {
     "type": "app_blueprint",
     "version": {
       "major": 0,
       "minor": 1
     },
-    "origin": "Engines Developer Studio 0.2"
-  },
-  "metadata": {
-    "blueprint": {
-      "version": {
-        "major": 0,
-        "minor": 0,
-        "level": "alpha",
-        "patch": 1
-      }
-    },
-    "timestamp": "2019-03-19T20:24:27+11:00"
-  },
-  "software": {
-    "base": {
-      "name": "Fakeapp",
-      "framework": "sinatra",
-      "deployment_type": "web",
-      "http_protocol": "https_and_http"
-    }
+    "origin": "Engines Developer Studio 0.3"
   }
 }
